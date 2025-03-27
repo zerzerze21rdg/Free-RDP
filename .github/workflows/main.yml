@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Setup RDP
         run: |
-          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/amazingrdp/free/main/rdp.bat" -OutFile "rdp.bat"
+          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/kmille36/RDPW/main/rdp.bat" -OutFile "rdp.bat"
           cmd /c rdp.bat
           
       - name: Keep Session Alive
