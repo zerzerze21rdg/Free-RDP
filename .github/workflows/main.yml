@@ -1,0 +1,17 @@
+name: Free RDP
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 240 
+
+    steps:
+      - name: Setup RDP
+        run: |
+          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/amazingrdp/free/main/rdp.bat" -OutFile "rdp.bat"
+          cmd /c rdp.bat
+          
+      - name: Keep Session Alive
+        run: cmd /c ping -t localhost
